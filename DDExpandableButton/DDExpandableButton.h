@@ -14,7 +14,7 @@
 
 @protocol DDExpandableButtonViewSource;
 
-typedef void (^DDExpandableButtonBlock)(void);
+typedef void (^DDExpandableButtonBlock)(CGFloat previousWidth, CGFloat expectedWidth);
 
 @interface DDExpandableButton : UIControl
 {

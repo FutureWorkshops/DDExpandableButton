@@ -270,11 +270,6 @@
 - (void)setExpanded:(BOOL)_expanded animated:(BOOL)animated
 {
 	expanded = _expanded;
-    
-    if (_expanded && self.expandableButtonWillExpandBlock)
-        self.expandableButtonWillExpandBlock();
-    else if (!_expanded && self.expandableButtonWillShrinkBlock)
-        self.expandableButtonWillShrinkBlock();
 	
 	if (animated)
 	{
@@ -367,8 +362,15 @@
 	// set title frames
 	leftTitleView.frame = CGRectMake(cornerAdditionalPadding + horizontalPadding, 0, [leftTitleView defaultFrameSize].width, maxHeight);
 	
+	CGRect previousFrame = self.frame;
+    
 	// set whole frame
 	[self setFrame:[self currentFrameRect]];
+    
+    if (_expanded && self.expandableButtonWillExpandBlock)
+        self.expandableButtonWillExpandBlock(previousFrame.size.width, self.frame.size.width);
+    else if (!_expanded && self.expandableButtonWillShrinkBlock)
+        self.expandableButtonWillShrinkBlock(previousFrame.size.width, self.frame.size.width);
 	
 	if (animated)
 	{
