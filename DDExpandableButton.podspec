@@ -5,7 +5,7 @@ Pod::Spec.new do|s|
 	s.author = 'Damien Debin'
 	s.homepage = 'https://github.com/ddebin/DDExpandableButton'
 	s.summary="DDExpandableButton is a class designed to be used like an expandable UIButton; as seen in the iOS Camera app for the flash button."
-	s.source={:git=>'git@github.com:FutureWorkshops/DDExpandableButton.git',:tag=>'fw'}
+	s.source={:git=>'git@github.com:FutureWorkshops/DDExpandableButton.git'}
 	s.source_files='DDExpandableButton/*{.h,.m}'
 	s.platform = :ios
 end
