@@ -14,6 +14,8 @@
 
 @protocol DDExpandableButtonViewSource;
 
+typedef void (^DDExpandableButtonBlock)(void);
+
 @interface DDExpandableButton : UIControl
 {
 	BOOL		expanded;
@@ -89,6 +91,9 @@
 
 - (void)disableTimeout;
 - (void)updateDisplay;
+
+@property (nonatomic, copy) DDExpandableButtonBlock expandableButtonWillExpandBlock;
+@property (nonatomic, copy) DDExpandableButtonBlock expandableButtonWillShrinkBlock;
 
 @end
 
