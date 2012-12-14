@@ -270,6 +270,11 @@
 - (void)setExpanded:(BOOL)_expanded animated:(BOOL)animated
 {
 	expanded = _expanded;
+    
+    if (_expanded && self.expandableButtonWillExpandBlock)
+        self.expandableButtonWillExpandBlock();
+    else if (!_expanded && self.expandableButtonWillShrinkBlock)
+        self.expandableButtonWillShrinkBlock();
 	
 	if (animated)
 	{
