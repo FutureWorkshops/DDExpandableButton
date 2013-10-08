@@ -1,6 +1,6 @@
 Pod::Spec.new do|s|
 	s.name='DDExpandableButton'
-	s.version='0.0.1.FW.3'
+	s.version='0.0.1.FW.4'
 	s.license = {:type => 'MIT', :file => 'LICENSE'}
 	s.author = 'Damien Debin'
 	s.homepage = 'https://github.com/ddebin/DDExpandableButton'

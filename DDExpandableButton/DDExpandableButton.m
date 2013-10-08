@@ -59,6 +59,7 @@
 @synthesize useAnimation;
 @synthesize borderColor;
 @synthesize textColor;
+@synthesize selectedColor;
 @synthesize labelFont;
 @synthesize unSelectedLabelFont;
 @synthesize timeout;
@@ -106,6 +107,7 @@
 		
 		self.borderColor = [UIColor colorWithWhite:DEFAULT_BORDER_WHITE alpha:DEFAULT_BORDER_ALPHA];
 		self.textColor = borderColor;
+        self.selectedColor = self.textColor;
 		self.labelFont = DEFAULT_FONT;
 		self.unSelectedLabelFont = DEFAULT_UNSELECTED_FONT;
 		
@@ -135,6 +137,7 @@
 	[leftTitleView release];
 	[borderColor release];
 	[textColor release];
+    [selectedColor release];
 	[labelFont release];
 	[unSelectedLabelFont release];
 	[labels release];
@@ -330,6 +333,7 @@
 			{
 				[(DDExpandableButtonCustomUILabel *)v setFont:labelFont];
 				[(DDExpandableButtonCustomUILabel *)v setTextColor:textColor];
+                [(DDExpandableButtonCustomUILabel *)v setHighlightedTextColor:selectedColor];
 			}
 			if ([v respondsToSelector:@selector(setHighlighted:)])
 			{

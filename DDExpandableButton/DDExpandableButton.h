@@ -29,6 +29,7 @@ typedef void (^DDExpandableButtonBlock)(CGFloat previousWidth, CGFloat expectedW
     NSUInteger	selectedItem;
 	UIColor		*borderColor;
 	UIColor 	*textColor;
+    UIColor     *selectedColor;
 	UIFont  	*labelFont;
 	UIFont  	*unSelectedLabelFont;
 	
@@ -72,6 +73,9 @@ typedef void (^DDExpandableButtonBlock)(CGFloat previousWidth, CGFloat expectedW
 
 // Color of text labels.
 @property (nonatomic,retain)	UIColor		*textColor;
+
+// color of selected label
+@property (nonatomic, retain)   UIColor     *selectedColor;
 
 // Font of text labels.
 @property (nonatomic,retain)	UIFont		*labelFont;
